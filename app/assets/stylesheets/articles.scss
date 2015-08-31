@@ -1,3 +1,43 @@
 // Place all the styles related to the articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#header {
+    background-color:black;
+    color:white;
+    text-align:center;
+    padding:5px;
+}
+#section_for_show {
+    width:1250px;
+    text-align:left;
+    float:left;
+    padding:10px;    
+}
+#footer {
+    background-color:black;
+    color:white;
+    clear:both;
+    text-align:center;
+   padding:5px;    
+}
+#nav {
+    line-height:30px;
+    background-color:#eeeeee;
+    height:203px;
+    width:200px;
+    float:left;
+    padding:5px;        
+}
+#section_for_index {
+    width:1050px;
+    float:left;
+    padding:10px;    
+}
+#nav_for_welcome {
+    line-height:30px;
+    background-color:#eeeeee;
+    height:300px;
+    width:150px;
+    float:left;
+    padding:5px;	      
+}   

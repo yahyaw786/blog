@@ -2,6 +2,9 @@ class CommentsController < ApplicationController
   def create
     @article = Article.find(params[:article_id])
     @comment = @article.comments.create(comment_params)
+    unless @comment.valid?
+      flash[:notice] = @comment.errors.full_messages
+    end
     redirect_to article_path(@article)
   end
  

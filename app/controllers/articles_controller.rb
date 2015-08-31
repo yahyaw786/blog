@@ -6,8 +6,11 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
   end
  
-   def index
-    @articles = Article.all
+  def index
+    @search = Article.search do
+      fulltext params[:search]
+    end
+    @articles = @search.results
   end
 
 
@@ -20,7 +23,7 @@ class ArticlesController < ApplicationController
   end
 
  
-  
+    
   def create
     @article = Article.new(article_params)
  

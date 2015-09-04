@@ -28,6 +28,7 @@ gem 'devise'
 gem 'sunspot_rails'
 gem 'sunspot_solr'
 gem 'progress_bar'
+gem 'omniauth-github'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

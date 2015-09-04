@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  
   # get 'welcome/index'
 
 
@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
+  devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
   root 'articles#index'
   resources :articles do
     resources :comments

@@ -1,16 +1,17 @@
 class ArticlesController < ApplicationController
 
-    before_filter :authenticate_user!, except: [:index, :show]
- 
+    before_filter :authenticate_user!
   def show
     @article = Article.find(params[:id])
+    
   end
  
   def index
     @search = Article.search do
       fulltext params[:search]
+      with(:user_id, current_user.id)
     end
-    @articles = @search.results
+    @articles = @search.results 
   end
 
 
@@ -26,7 +27,7 @@ class ArticlesController < ApplicationController
     
   def create
     @article = Article.new(article_params)
- 
+    @article.user_id = current_user.id
     if @article.save
       redirect_to @article
     else

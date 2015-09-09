@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
-  root 'articles#index'
+  root 'welcome#index'
   resources :articles do
     resources :comments
   end  

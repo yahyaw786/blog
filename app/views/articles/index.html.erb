@@ -12,6 +12,9 @@
   <h2 style="font-family:arial">
 <%= link_to 'New article', new_article_path %>
   </h2>
+    <h2 style="font-family:arial">
+<%= link_to 'Feed', shares_path %>
+  </h2>
 </div>
 
 <div id="section_for_index">
@@ -22,6 +25,7 @@
     <th>Show</th>
     <th>Edit</th>
     <th>Delete</th>
+    <th>Share</th>
     
   </tr>
 </div>
@@ -35,6 +39,13 @@
       <td><%= link_to 'Destroy', article_path(article),
               method: :delete,
               data: { confirm: 'Are you sure?' } %></td>
+      <td>
+        <%= form_tag(shares_path, method: :post ) do %>
+          <%= hidden_field_tag 'user_id', current_user.id %>
+          <%= hidden_field_tag 'article_id', article.id %>
+          <%= submit_tag "Share" %>
+        <% end %>
+      </td>
     </tr>
   <% end %>
 </table>

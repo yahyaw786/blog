@@ -9,8 +9,10 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
   root 'welcome#index'
+  resources :shares
   resources :articles do
     resources :comments
+
   end  
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

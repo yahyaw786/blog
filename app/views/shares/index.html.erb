@@ -1,0 +1,20 @@
+<h1> Shared Articles </h1>
+<table border="1" style="width:100%">
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+    
+  </tr>
+</div>
+ 
+  <% @shares.each do |share| %>
+    <tr>
+      <td><%= share.article.title %></td>
+      <td><%= share.article.text %></td>
+      <td><%= share.user.email %></td>
+      <td><%=link_to 'Destroy', share_path(share),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+      
+  <% end %>
+</table>

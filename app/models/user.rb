@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :articles, dependent: :destroy
+  has_many :shares, dependent: :destroy
   
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and 
